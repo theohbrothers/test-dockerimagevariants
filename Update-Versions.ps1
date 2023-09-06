@@ -6,7 +6,7 @@ param (
     [switch]$DryRun
 ,
     [Parameter(HelpMessage="Whether to open a PR for each updated version in version.json")]
-    [switch]$PR
+    [switch]$PR = $true
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
