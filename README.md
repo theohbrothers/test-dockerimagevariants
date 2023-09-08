@@ -10,7 +10,7 @@
 <table>
 <tr><th align="center">Tag</th><th align="center">Dockerfile Build Context</th></tr>
 
-<tr><td align="center"><code>:v0.3.2-alpine-3.15</code>, <code>:latest</code></td><td align="center"><a href="variants/v0.3.2-alpine-3.15">View</a></td></tr>
+<tr><td align="center"><code>:v0.3.3-alpine-3.15</code>, <code>:latest</code></td><td align="center"><a href="variants/v0.3.3-alpine-3.15">View</a></td></tr>
 
 <tr><td align="center"><code>:v0.2.6-alpine-3.15</code></td><td align="center"><a href="variants/v0.2.6-alpine-3.15">View</a></td></tr>
 
