@@ -7,27 +7,21 @@
 
 ## Tags
 
+<!-- When using Markdown table, changed adjacent lines results in merge conflicts. Instead, use a HTML table to keep changed lines apart to prevent merge conflicts. -->
 <table>
-<tr>
-  <th style="text-align: center">Tag</th>
-  <th style="text-align: center">Dockerfile Build Context</th>
-</tr>
+<tr><th align="center">Tag</th><th align="center">Dockerfile Build Context</th></tr>
 $(
 ($VARIANTS | % {
     if ( $_['tag_as_latest'] ) {
 @"
-<tr>
-  <td style="text-align: center"><code>:$( $_['tag'] )</code>, <code>:latest</code></td>
-  <td style="text-align: center"><a href="variants/$( $_['tag'] )">View</a></td>
-</tr>
+
+<tr><td align="center"><code>:$( $_['tag'] )</code>, <code>:latest</code></td><td align="center"><a href="variants/$( $_['tag'] )">View</a></td></tr>
 
 "@
     }else {
 @"
-<tr>
-  <td style="text-align: center"><code>:$( $_['tag'] )</code></td>
-  <td style="text-align: center"><a href="variants/$( $_['tag'] )">View</a></td>
-</tr>
+
+<tr><td align="center"><code>:$( $_['tag'] )</code></td><td align="center"><a href="variants/$( $_['tag'] )">View</a></td></tr>
 
 "@
     }

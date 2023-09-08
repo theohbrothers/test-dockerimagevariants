@@ -6,23 +6,15 @@
 
 ## Tags
 
+<!-- When using Markdown table, changed adjacent lines results in merge conflicts. Instead, use a HTML table to keep changed lines apart to prevent merge conflicts. -->
 <table>
-<tr>
-  <th style="text-align: center">Tag</th>
-  <th style="text-align: center">Dockerfile Build Context</th>
-</tr>
-<tr>
-  <td style="text-align: center"><code>:v0.3.1-alpine-3.15</code>, <code>:latest</code></td>
-  <td style="text-align: center"><a href="variants/v0.3.1-alpine-3.15">View</a></td>
-</tr>
-<tr>
-  <td style="text-align: center"><code>:v0.2.1-alpine-3.15</code></td>
-  <td style="text-align: center"><a href="variants/v0.2.1-alpine-3.15">View</a></td>
-</tr>
-<tr>
-  <td style="text-align: center"><code>:v0.1.0-alpine-3.15</code></td>
-  <td style="text-align: center"><a href="variants/v0.1.0-alpine-3.15">View</a></td>
-</tr>
+<tr><th align="center">Tag</th><th align="center">Dockerfile Build Context</th></tr>
+
+<tr><td align="center"><code>:v0.3.1-alpine-3.15</code>, <code>:latest</code></td><td align="center"><a href="variants/v0.3.1-alpine-3.15">View</a></td></tr>
+
+<tr><td align="center"><code>:v0.2.1-alpine-3.15</code></td><td align="center"><a href="variants/v0.2.1-alpine-3.15">View</a></td></tr>
+
+<tr><td align="center"><code>:v0.1.0-alpine-3.15</code></td><td align="center"><a href="variants/v0.1.0-alpine-3.15">View</a></td></tr>
 </table>
 
 ## Development
