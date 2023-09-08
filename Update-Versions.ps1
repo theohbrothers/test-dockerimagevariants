@@ -31,7 +31,7 @@ Push-Location $repo
 $versionsNew = @(
     '0.4.0'
     '0.3.2'
-    '0.2.4'
+    '0.2.5'
     '0.1.0'
 )
 $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
