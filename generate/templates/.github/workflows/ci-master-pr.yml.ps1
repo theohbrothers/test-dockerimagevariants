@@ -40,6 +40,7 @@ $VARIANTS | % {
 @"
 
 
+  # I am a line to prevent merge conflicts
   build-$( $_['tag'].Replace('.', '-') ):
     runs-on: ubuntu-latest
     env:
