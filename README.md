@@ -6,14 +6,24 @@
 
 ## Tags
 
-| Tag | Dockerfile Build Context |
-|:-------:|:---------:|
-| <!-- I am line to prevent merge conflicts -->
-| `:v0.3.1-alpine-3.15`, `:latest` | [View](variants/v0.3.1-alpine-3.15) |
-| <!-- I am line to prevent merge conflicts -->
-| `:v0.2.1-alpine-3.15` | [View](variants/v0.2.1-alpine-3.15) |
-| <!-- I am line to prevent merge conflicts -->
-| `:v0.1.0-alpine-3.15` | [View](variants/v0.1.0-alpine-3.15) |
+<table>
+<tr>
+  <th style="text-align: center">Tag</th>
+  <th style="text-align: center">Dockerfile Build Context</th>
+</tr>
+<tr>
+  <td style="text-align: center"><code>:v0.3.1-alpine-3.15</code>, <code>:latest</code></td>
+  <td style="text-align: center"><a href="variants/v0.3.1-alpine-3.15">View</a></td>
+</tr>
+<tr>
+  <td style="text-align: center"><code>:v0.2.1-alpine-3.15</code></td>
+  <td style="text-align: center"><a href="variants/v0.2.1-alpine-3.15">View</a></td>
+</tr>
+<tr>
+  <td style="text-align: center"><code>:v0.1.0-alpine-3.15</code></td>
+  <td style="text-align: center"><a href="variants/v0.1.0-alpine-3.15">View</a></td>
+</tr>
+</table>
 
 ## Development
 

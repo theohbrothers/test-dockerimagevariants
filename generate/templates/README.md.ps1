@@ -7,25 +7,33 @@
 
 ## Tags
 
-| Tag | Dockerfile Build Context |
-|:-------:|:---------:|
+<table>
+<tr>
+  <th style="text-align: center">Tag</th>
+  <th style="text-align: center">Dockerfile Build Context</th>
+</tr>
 $(
 ($VARIANTS | % {
     if ( $_['tag_as_latest'] ) {
 @"
-| <!-- I am line to prevent merge conflicts -->
-| ``:$( $_['tag'] )``, ``:latest`` | [View](variants/$( $_['tag'] )) |
+<tr>
+  <td style="text-align: center"><code>:$( $_['tag'] )</code>, <code>:latest</code></td>
+  <td style="text-align: center"><a href="variants/$( $_['tag'] )">View</a></td>
+</tr>
 
 "@
     }else {
 @"
-| <!-- I am line to prevent merge conflicts -->
-| ``:$( $_['tag'] )`` | [View](variants/$( $_['tag'] )) |
+<tr>
+  <td style="text-align: center"><code>:$( $_['tag'] )</code></td>
+  <td style="text-align: center"><a href="variants/$( $_['tag'] )">View</a></td>
+</tr>
 
 "@
     }
 }) -join ''
-)
+)</table>
+
 
 "@
 
