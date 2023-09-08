@@ -182,8 +182,7 @@ if ( $_['tag_as_latest'] ) {
 
 
   update-draft-release:
-    needs:
-      - $( $local:WORKFLOW_JOB_NAMES -join "`n      - " )
+    needs: $( $local:WORKFLOW_JOB_NAMES | % { "`n      # I am a line to prevent merge conflicts`n      - $_" } )
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
