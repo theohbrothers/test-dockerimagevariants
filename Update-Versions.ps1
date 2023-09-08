@@ -16,7 +16,7 @@ Set-StrictMode -Version Latest
     'Generate-DockerImageVariantsHelpers'
     'Powershell-Yaml'
 ) | % {
-    if (! (Get-InstalledModule $_) ) {
+    if (! (Get-InstalledModule $_ -ErrorAction SilentlyContinue) ) {
         Install-Module $_ -Scope CurrentUser -Force
     }
 }
@@ -25,7 +25,8 @@ if (Test-Path ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVar
     Import-module ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVariantsHelpers -Force
 }
 
-Clone-TempRepo
+$repo = Clone-TempRepo
+Push-Location $repo
 
 $versionsNew = @(
     '0.4.0'
@@ -35,3 +36,5 @@ $versionsNew = @(
 )
 $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
 Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR
+
+Pop-Location
