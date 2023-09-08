@@ -8,8 +8,11 @@
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
+| <!-- I am line to prevent merge conflicts -->
 | `:v0.3.1-alpine-3.15`, `:latest` | [View](variants/v0.3.1-alpine-3.15) |
+| <!-- I am line to prevent merge conflicts -->
 | `:v0.2.1-alpine-3.15` | [View](variants/v0.2.1-alpine-3.15) |
+| <!-- I am line to prevent merge conflicts -->
 | `:v0.1.0-alpine-3.15` | [View](variants/v0.1.0-alpine-3.15) |
 
 ## Development

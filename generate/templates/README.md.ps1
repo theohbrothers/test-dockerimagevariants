@@ -13,11 +13,13 @@ $(
 ($VARIANTS | % {
     if ( $_['tag_as_latest'] ) {
 @"
+| <!-- I am line to prevent merge conflicts -->
 | ``:$( $_['tag'] )``, ``:latest`` | [View](variants/$( $_['tag'] )) |
 
 "@
     }else {
 @"
+| <!-- I am line to prevent merge conflicts -->
 | ``:$( $_['tag'] )`` | [View](variants/$( $_['tag'] )) |
 
 "@
