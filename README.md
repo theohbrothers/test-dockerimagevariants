@@ -6,18 +6,12 @@
 
 ## Tags
 
-<!-- When using Markdown table, changed adjacent lines results in merge conflicts. Instead, use a HTML table to keep changed lines apart to prevent merge conflicts. -->
-<table>
-<tr><th align="center">Tag</th><th align="center">Dockerfile Build Context</th></tr>
-
-<tr><td align="center"><code>:v0.4.2-alpine-3.15</code>, <code>:latest</code></td><td align="center"><a href="variants/v0.4.2-alpine-3.15">View</a></td></tr>
-
-<tr><td align="center"><code>:v0.3.5-alpine-3.15</code></td><td align="center"><a href="variants/v0.3.5-alpine-3.15">View</a></td></tr>
-
-<tr><td align="center"><code>:v0.2.9-alpine-3.15</code></td><td align="center"><a href="variants/v0.2.9-alpine-3.15">View</a></td></tr>
-
-<tr><td align="center"><code>:v0.1.0-alpine-3.15</code></td><td align="center"><a href="variants/v0.1.0-alpine-3.15">View</a></td></tr>
-</table>
+| Tag | Dockerfile Build Context |
+|:-------:|:---------:|
+| `:v0.4.2-alpine-3.15`, `:latest` | [View](variants/v0.4.2-alpine-3.15) |
+| `:v0.3.5-alpine-3.15` | [View](variants/v0.3.5-alpine-3.15) |
+| `:v0.2.9-alpine-3.15` | [View](variants/v0.2.9-alpine-3.15) |
+| `:v0.1.0-alpine-3.15` | [View](variants/v0.1.0-alpine-3.15) |
 
 ## Development
 
@@ -49,8 +43,8 @@ To update versions in `versions.json`:
 ./Update-Versions.ps1
 ```
 
-To update versions in `versions.json`, and open a PR for each updated version:
+To update versions in `versions.json`, and open a PR for each updated version, and merge one after another:
 
 ```powershell
-./Update-Versions.ps1 -PR
+./Update-Versions.ps1 -PR -AutoMergeQueue
 ```

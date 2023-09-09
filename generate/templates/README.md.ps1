@@ -7,27 +7,23 @@
 
 ## Tags
 
-<!-- When using Markdown table, changed adjacent lines results in merge conflicts. Instead, use a HTML table to keep changed lines apart to prevent merge conflicts. -->
-<table>
-<tr><th align="center">Tag</th><th align="center">Dockerfile Build Context</th></tr>
+| Tag | Dockerfile Build Context |
+|:-------:|:---------:|
 $(
 ($VARIANTS | % {
     if ( $_['tag_as_latest'] ) {
 @"
-
-<tr><td align="center"><code>:$( $_['tag'] )</code>, <code>:latest</code></td><td align="center"><a href="variants/$( $_['tag'] )">View</a></td></tr>
+| ``:$( $_['tag'] )``, ``:latest`` | [View](variants/$( $_['tag'] )) |
 
 "@
     }else {
 @"
-
-<tr><td align="center"><code>:$( $_['tag'] )</code></td><td align="center"><a href="variants/$( $_['tag'] )">View</a></td></tr>
+| ``:$( $_['tag'] )`` | [View](variants/$( $_['tag'] )) |
 
 "@
     }
 }) -join ''
-)</table>
-
+)
 
 "@
 
@@ -62,10 +58,10 @@ To update versions in `versions.json`:
 ./Update-Versions.ps1
 ```
 
-To update versions in `versions.json`, and open a PR for each updated version:
+To update versions in `versions.json`, and open a PR for each updated version, and merge one after another:
 
 ```powershell
-./Update-Versions.ps1 -PR
+./Update-Versions.ps1 -PR -AutoMergeQueue
 ```
 
 '@

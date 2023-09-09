@@ -33,7 +33,6 @@ jobs:
       run: |
         git diff --exit-code
 
-  # I am a line to prevent merge conflicts
   build-v0-4-2-alpine-3-15:
     runs-on: ubuntu-latest
     env:
@@ -155,7 +154,6 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  # I am a line to prevent merge conflicts
   build-v0-3-5-alpine-3-15:
     runs-on: ubuntu-latest
     env:
@@ -276,7 +274,6 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  # I am a line to prevent merge conflicts
   build-v0-2-9-alpine-3-15:
     runs-on: ubuntu-latest
     env:
@@ -397,7 +394,6 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-  # I am a line to prevent merge conflicts
   build-v0-1-0-alpine-3-15:
     runs-on: ubuntu-latest
     env:
@@ -519,14 +515,10 @@ jobs:
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
   update-draft-release:
-    needs: 
-      # I am a line to prevent merge conflicts
-      - build-v0-4-2-alpine-3-15 
-      # I am a line to prevent merge conflicts
-      - build-v0-3-5-alpine-3-15 
-      # I am a line to prevent merge conflicts
-      - build-v0-2-9-alpine-3-15 
-      # I am a line to prevent merge conflicts
+    needs:
+      - build-v0-4-2-alpine-3-15
+      - build-v0-3-5-alpine-3-15
+      - build-v0-2-9-alpine-3-15
       - build-v0-1-0-alpine-3-15
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
@@ -540,14 +532,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish-draft-release:
-    needs: 
-      # I am a line to prevent merge conflicts
-      - build-v0-4-2-alpine-3-15 
-      # I am a line to prevent merge conflicts
-      - build-v0-3-5-alpine-3-15 
-      # I am a line to prevent merge conflicts
-      - build-v0-2-9-alpine-3-15 
-      # I am a line to prevent merge conflicts
+    needs:
+      - build-v0-4-2-alpine-3-15
+      - build-v0-3-5-alpine-3-15
+      - build-v0-2-9-alpine-3-15
       - build-v0-1-0-alpine-3-15
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
@@ -563,14 +551,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   update-dockerhub-description:
-    needs: 
-      # I am a line to prevent merge conflicts
-      - build-v0-4-2-alpine-3-15 
-      # I am a line to prevent merge conflicts
-      - build-v0-3-5-alpine-3-15 
-      # I am a line to prevent merge conflicts
-      - build-v0-2-9-alpine-3-15 
-      # I am a line to prevent merge conflicts
+    needs:
+      - build-v0-4-2-alpine-3-15
+      - build-v0-3-5-alpine-3-15
+      - build-v0-2-9-alpine-3-15
       - build-v0-1-0-alpine-3-15
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
