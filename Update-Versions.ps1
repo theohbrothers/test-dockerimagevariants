@@ -7,6 +7,9 @@ param (
 ,
     [Parameter(HelpMessage="Whether to open a PR for each updated version in version.json")]
     [switch]$PR
+,
+    [Parameter(HelpMessage="Whether to merge each PR one after another (note that this is not GitHub merge queue which cannot handle merge conflicts). The queue ensures each PR is rebased to prevent merge conflicts.")]
+    [switch]$AutoMergeQueue
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -35,6 +38,6 @@ $versionsNew = @(
     '0.1.0'
 )
 $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
-Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue
+Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue
 
 Pop-Location
