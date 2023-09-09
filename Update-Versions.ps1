@@ -24,21 +24,24 @@ Set-StrictMode -Version Latest
     }
 }
 
+# Override with development module if it exists
 if (Test-Path ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVariantsHelpers) {
     Import-module ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVariantsHelpers -Force
 }
+
 try {
     $repo = Clone-TempRepo
     Push-Location $repo
 
     $versionsNew = @(
-        '0.4.1'
-        '0.3.4'
-        '0.2.8'
+        '0.4.2'
+        '0.3.5'
+        '0.2.9'
         '0.1.0'
     )
     $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
-    Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue
+    $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue
+    $autoMergeResults
 }catch {
     throw
 }finally {
