@@ -27,17 +27,20 @@ Set-StrictMode -Version Latest
 if (Test-Path ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVariantsHelpers) {
     Import-module ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVariantsHelpers -Force
 }
+try {
+    $repo = Clone-TempRepo
+    Push-Location $repo
 
-$repo = Clone-TempRepo
-Push-Location $repo
-
-$versionsNew = @(
-    '0.4.0'
-    '0.3.4'
-    '0.2.8'
-    '0.1.0'
-)
-$versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
-Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue
-
-Pop-Location
+    $versionsNew = @(
+        '0.4.1'
+        '0.3.4'
+        '0.2.8'
+        '0.1.0'
+    )
+    $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
+    Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue
+}catch {
+    throw
+}finally {
+    Pop-Location
+}
