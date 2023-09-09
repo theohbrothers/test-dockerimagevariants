@@ -31,10 +31,10 @@ Push-Location $repo
 $versionsNew = @(
     '0.4.0'
     '0.3.4'
-    '0.2.7'
+    '0.2.8'
     '0.1.0'
 )
 $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
-Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR
+Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue
 
 Pop-Location
