@@ -12,7 +12,7 @@
 
 <tr><td align="center"><code>:v0.4.2-alpine-3.15</code>, <code>:latest</code></td><td align="center"><a href="variants/v0.4.2-alpine-3.15">View</a></td></tr>
 
-<tr><td align="center"><code>:v0.3.4-alpine-3.15</code></td><td align="center"><a href="variants/v0.3.4-alpine-3.15">View</a></td></tr>
+<tr><td align="center"><code>:v0.3.5-alpine-3.15</code></td><td align="center"><a href="variants/v0.3.5-alpine-3.15">View</a></td></tr>
 
 <tr><td align="center"><code>:v0.2.8-alpine-3.15</code></td><td align="center"><a href="variants/v0.2.8-alpine-3.15">View</a></td></tr>
 
