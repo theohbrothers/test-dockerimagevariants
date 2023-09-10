@@ -5,14 +5,17 @@ param (
     [Parameter(HelpMessage="Whether to perform a dry run (skip writing versions.json)")]
     [switch]$DryRun
 ,
-    [Parameter(HelpMessage="Whether to clone a temporary repo before opening PRs. Useful in development.")]
+    [Parameter(HelpMessage="Whether to clone a temporary repo before opening PRs. Useful in development")]
     [switch]$CloneTempRepo
 ,
     [Parameter(HelpMessage="Whether to open a PR for each updated version in version.json")]
     [switch]$PR
 ,
-    [Parameter(HelpMessage="Whether to merge each PR one after another (note that this is not GitHub merge queue which cannot handle merge conflicts). The queue ensures each PR is rebased to prevent merge conflicts.")]
+    [Parameter(HelpMessage="Whether to merge each PR one after another (note that this is not GitHub merge queue which cannot handle merge conflicts). The queue ensures each PR is rebased to prevent merge conflicts")]
     [switch]$AutoMergeQueue
+,
+    [Parameter(HelpMessage="Whether to create a tagged release and closing milestone, after merging all PRs")]
+    [switch]$AutoRelease
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -47,7 +50,9 @@ try {
     )
     $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
     $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue
-    $tag = New-Release -TagConvention calver
+    if ($AutoRelease) {
+        $tag = New-Release -TagConvention calver
+    }
 }catch {
     throw
 }finally {
