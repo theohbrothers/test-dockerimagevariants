@@ -41,7 +41,7 @@ try {
     )
     $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
     $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue
-    $autoMergeResults
+    $tag = New-Release -TagConvention calver
 }catch {
     throw
 }finally {
