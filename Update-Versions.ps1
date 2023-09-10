@@ -13,6 +13,10 @@ param (
 ,
     [Parameter(HelpMessage="Whether to create a tagged release and closing milestone, after merging all PRs")]
     [switch]$AutoRelease
+,
+    [Parameter(HelpMessage="-AutoRelease tag convention")]
+    [ValidateSet('calver', 'semver')]
+    [string]$AutoReleaseTagConvention = 'calver'
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -45,7 +49,7 @@ try {
         "0.1.0"
     )
     $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
-    $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue -AutoRelease:$AutoRelease -WhatIf:$WhatIfPreference
+    $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue -AutoRelease:$AutoRelease -AutoReleaseTagConvention $AutoReleaseTagConvention -WhatIf:$WhatIfPreference
 }catch {
     throw
 }finally {
