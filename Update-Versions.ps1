@@ -5,6 +5,9 @@ param (
     [Parameter(HelpMessage="Whether to perform a dry run (skip writing versions.json)")]
     [switch]$DryRun
 ,
+    [Parameter(HelpMessage="Whether to clone a temporary repo before opening PRs. Useful in development.")]
+    [switch]$CloneTempRepo
+,
     [Parameter(HelpMessage="Whether to open a PR for each updated version in version.json")]
     [switch]$PR
 ,
@@ -30,8 +33,10 @@ if (Test-Path ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVar
 }
 
 try {
-    $repo = Clone-TempRepo
-    Push-Location $repo
+    if ($CloneTempRepo) {
+        $repo = Clone-TempRepo
+        Push-Location $repo
+    }
 
     $versionsNew = @(
         '0.5.0'
@@ -46,5 +51,7 @@ try {
 }catch {
     throw
 }finally {
-    Pop-Location
+    if ($CloneTempRepo) {
+        Pop-Location
+    }
 }
