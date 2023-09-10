@@ -2,11 +2,11 @@
 # It may be run manually or as a cron
 [CmdletBinding()]
 param (
-    [Parameter(HelpMessage="Whether to perform a dry run (skip writing versions.json)")]
-    [switch]$DryRun
-,
     [Parameter(HelpMessage="Whether to clone a temporary repo before opening PRs. Useful in development")]
     [switch]$CloneTempRepo
+,
+    [Parameter(HelpMessage="Whether to perform a dry run (skip writing versions.json)")]
+    [switch]$DryRun
 ,
     [Parameter(HelpMessage="Whether to open a PR for each updated version in version.json")]
     [switch]$PR
@@ -49,8 +49,8 @@ try {
         '0.1.0'
     )
     $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
-    $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue
-    if ($AutoRelease) {
+    $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -DryRun:$DryRun -PR:$PR -AutoMergeQueue:$AutoMergeQueue
+    if (!$DryRun -and $AutoRelease) {
         $tag = New-Release -TagConvention calver
     }
 }catch {
