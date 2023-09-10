@@ -45,10 +45,7 @@ try {
         "0.1.0"
     )
     $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
-    $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue -WhatIf:$WhatIfPreference
-    if ($AutoRelease) {
-        $tag = New-Release -WhatIf:$WhatIfPreference
-    }
+    $autoMergeResults = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue -AutoRelease:$AutoRelease -WhatIf:$WhatIfPreference
 }catch {
     throw
 }finally {
