@@ -5,7 +5,7 @@ param (
     [Parameter(HelpMessage="Whether to clone a temporary repo before opening PRs. Useful in development")]
     [switch]$CloneTempRepo
 ,
-    [Parameter(HelpMessage="Whether to perform a dry run (skip writing versions.json)")]
+    [Parameter(HelpMessage="Whether to perform a dry run")]
     [switch]$DryRun
 ,
     [Parameter(HelpMessage="Whether to open a PR for each updated version in version.json")]
