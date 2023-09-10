@@ -20,7 +20,7 @@ jobs:
         token: ${{ secrets.WORKFLOW_TOKEN }}  # This configures the git repo to use this token
     - shell: pwsh
       run: |
-        ./Update-Versions.ps1 -PR
+        ./Update-Versions.ps1 -PR -AutoMergeQueue -AutoRelease
       env:
         GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
 
