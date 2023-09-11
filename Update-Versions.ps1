@@ -50,8 +50,10 @@ try {
         "0.1.0"
     )
     $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
-    $return = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -WhatIf:$WhatIfPreference #-AutoMergeQueue:$AutoMergeQueue -AutoRelease:$AutoRelease -AutoReleaseTagConvention $AutoReleaseTagConvention -WhatIf:$WhatIfPreference
-    $return = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -WhatIf:$WhatIfPreference #-AutoMergeQueue:$AutoMergeQueue -AutoRelease:$AutoRelease -AutoReleaseTagConvention $AutoReleaseTagConvention -WhatIf:$WhatIfPreference
+    # Open PRs with CI disabled
+    $prs = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -CommitPreScriptblock { Move-Item .github .github.disabled -Force } -PR:$PR -WhatIf:$WhatIfPreference
+    # Then update and merge PRs one at a time, and release
+    $return = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue -AutoRelease:$AutoRelease -AutoReleaseTagConvention $AutoReleaseTagConvention -WhatIf:$WhatIfPreference
 }catch {
     throw
 }finally {
@@ -59,3 +61,4 @@ try {
         Pop-Location
     }
 }
+`
