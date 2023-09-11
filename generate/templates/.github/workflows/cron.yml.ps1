@@ -16,9 +16,9 @@ jobs:
     # See: https://stackoverflow.com/questions/66643917/refusing-to-allow-a-github-app-to-create-or-update-workflow
     - name: Checkout
       uses: actions/checkout@v3
-      fetch-tags: true  # Fetch all tags
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}  # This configures the git repo to use this token
+        fetch-tags: true  # Fetch all tags
     - shell: pwsh
       run: |
         ./Update-Versions.ps1 -PR -AutoMergeQueue -AutoRelease
