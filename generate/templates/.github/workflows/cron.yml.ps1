@@ -15,7 +15,8 @@ jobs:
     # See: https://stackoverflow.com/questions/68811838/refusing-to-allow-a-personal-access-token-to-create-or-update-workflow
     # See: https://stackoverflow.com/questions/66643917/refusing-to-allow-a-github-app-to-create-or-update-workflow
     - name: Checkout
-      uses: actions/checkout@v1 # Fetch all tags
+      uses: actions/checkout@v3
+      fetch-tags: true  # Fetch all tags
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}  # This configures the git repo to use this token
     - shell: pwsh
