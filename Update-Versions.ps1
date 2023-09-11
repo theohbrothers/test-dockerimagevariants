@@ -1,5 +1,6 @@
-# This script is to update versions in version.json, and create PR(s) for each bumped version
+# This script is to update versions in version.json, create PR(s) for each bumped version, merge PRs, and release
 # It may be run manually or as a cron
+# Use -WhatIf for dry run
 [CmdletBinding(SupportsShouldProcess)]
 param (
     [Parameter(HelpMessage="Whether to clone a temporary repo before opening PRs. Useful in development")]
