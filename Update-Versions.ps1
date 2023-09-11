@@ -44,9 +44,9 @@ try {
     }
 
     $versionsNew = @(,
-        "0.4.8"
-        "0.3.10"
-        "0.2.12"
+        "0.4.9"
+        "0.3.11"
+        "0.2.13"
         "0.1.0"
     )
     $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
