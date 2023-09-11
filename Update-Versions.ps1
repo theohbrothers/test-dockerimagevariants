@@ -43,7 +43,7 @@ try {
         Push-Location $repo
     }
 
-    # Get my versions
+    # Get my versions from generate/definitions/versions.json
     $versions = Get-DockerImageVariantsVersions
     # Get new versions
     $versionsNew = @(
@@ -56,7 +56,7 @@ try {
     $versionsChanged = Get-VersionsChanged -Versions $versions -VersionsNew $versionsNew -AsObject -Descending
     # Open PRs with CI disabled
     $prs = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -CommitPreScriptblock { Move-Item .github .github.disabled -Force } -PR:$PR -WhatIf:$WhatIfPreference
-    # Then update and merge PRs one at a time, and release
+    # Update PRs with CI, merge PRs one at a time, release and close milestone
     $return = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue -AutoRelease:$AutoRelease -AutoReleaseTagConvention $AutoReleaseTagConvention -WhatIf:$WhatIfPreference
 }catch {
     throw
