@@ -43,7 +43,7 @@ try {
         Push-Location $repo
     }
 
-    $versionsNew = @(
+    $versionsNew = @(,
         "0.4.7"
         "0.3.9"
         "0.2.11"
