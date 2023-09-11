@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         token: ${{ secrets.WORKFLOW_TOKEN }}  # This configures the git repo to use this token
-        fetch-tags: true  # Fetch all tags
+        fetch-depth: 0  # Fetch all branches and tags
     - shell: pwsh
       run: |
         ./Update-Versions.ps1 -PR -AutoMergeQueue -AutoRelease
