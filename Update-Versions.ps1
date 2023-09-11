@@ -43,13 +43,17 @@ try {
         Push-Location $repo
     }
 
-    $versionsNew = @(,
+    # Get my versions
+    $versions = Get-DockerImageVariantsVersions
+    # Get new versions
+    $versionsNew = @(
         "0.4.9"
         "0.3.11"
         "0.2.13"
         "0.1.0"
     )
-    $versionsChanged = Get-VersionsChanged -Versions (Get-DockerImageVariantsVersions) -VersionsNew $versionsNew -AsObject -Descending
+    # Get changed versions
+    $versionsChanged = Get-VersionsChanged -Versions $versions -VersionsNew $versionsNew -AsObject -Descending
     # Open PRs with CI disabled
     $prs = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -CommitPreScriptblock { Move-Item .github .github.disabled -Force } -PR:$PR -WhatIf:$WhatIfPreference
     # Then update and merge PRs one at a time, and release
