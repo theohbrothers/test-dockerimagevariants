@@ -9,7 +9,7 @@
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
 | `:v0.4.5-alpine-3.15`, `:latest` | [View](variants/v0.4.5-alpine-3.15) |
-| `:v0.3.5-alpine-3.15` | [View](variants/v0.3.5-alpine-3.15) |
+| `:v0.3.6-alpine-3.15` | [View](variants/v0.3.6-alpine-3.15) |
 | `:v0.2.9-alpine-3.15` | [View](variants/v0.2.9-alpine-3.15) |
 | `:v0.1.0-alpine-3.15` | [View](variants/v0.1.0-alpine-3.15) |
 
