@@ -31,7 +31,6 @@ Set-StrictMode -Version Latest
         Install-Module $_ -Scope CurrentUser -Force
     }
 }
-
 # Override with development module if it exists
 if (Test-Path ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVariantsHelpers) {
     Import-module ../Generate-DockerImageVariantsHelpers/src/Generate-DockerImageVariantsHelpers -Force
@@ -56,9 +55,9 @@ try {
     )
     # Get changed versions
     $versionsChanged = Get-VersionsChanged -Versions $versions -VersionsNew $versionsNew -AsObject -Descending
-    # Open PRs with CI disabled
+    # Update versions.json, and open PRs with CI disabled
     $prs = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -CommitPreScriptblock { Move-Item .github .github.disabled -Force } -PR:$PR -WhatIf:$WhatIfPreference
-    # Update PRs with CI, merge PRs one at a time, release and close milestone
+    # Update versions.json, update PRs with CI, merge PRs one at a time, release and close milestone
     $return = Update-DockerImageVariantsVersions -VersionsChanged $versionsChanged -PR:$PR -AutoMergeQueue:$AutoMergeQueue -AutoRelease:$AutoRelease -AutoReleaseTagConvention $AutoReleaseTagConvention -WhatIf:$WhatIfPreference
 }catch {
     throw
@@ -67,4 +66,3 @@ try {
         Pop-Location
     }
 }
-`
