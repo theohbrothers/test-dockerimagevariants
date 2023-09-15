@@ -1,4 +1,4 @@
-# This script is to update versions in version.json, create PR(s) for each bumped version, merge PRs, and release
+# This script is to update versions in versions.json, create PR(s) for each bumped version, merge PRs, and release
 # It may be run manually or as a cron
 # Use -WhatIf for dry run
 [CmdletBinding(SupportsShouldProcess)]
@@ -41,8 +41,6 @@ try {
         $repo = Clone-TempRepo
         Push-Location $repo
     }
-
-    $env:GITHUB_TOKEN = if ($env:GITHUB_TOKEN) { $env:GITHUB_TOKEN } else { (Get-Content ~/.git-credentials -Encoding utf8 -Force) -split "`n" | % { if ($_ -match '^https://[^:]+:([^:]+)@github.com') { $matches[1] } } | Select-Object -First 1 }
 
     # Get my versions from generate/definitions/versions.json
     $versions = Get-DockerImageVariantsVersions
