@@ -2,13 +2,13 @@ $local:VERSIONS = Get-Content $PSScriptRoot/versions.json -Encoding utf8 | Conve
 
 # Docker image variants' definitions
 $local:VARIANTS_MATRIX = @(
-    foreach ($v in $local:VERSIONS) {
+    foreach ($v in $local:VERSIONS.coolpackage.versions) {
         @{
             package_version = "v$v"
             distro = 'alpine'
             distro_version = '3.15'
             subvariants = @(
-                @{ components = @(); tag_as_latest = if ($v -eq ($local:VERSIONS | ? { $_ -match '^\d+\.\d+\.\d+$' } | Select-Object -First 1 )) { $true } else { $false } }
+                @{ components = @(); tag_as_latest = if ($v -eq ($local:VERSIONS.coolpackage.versions | ? { $_ -match '^\d+\.\d+\.\d+$' } | Select-Object -First 1 )) { $true } else { $false } }
             )
         }
     }

@@ -1,6 +1,11 @@
-[
-  "0.4.10",
-  "0.3.11",
-  "0.2.13",
-  "0.1.0"
-]
+{
+  "coolpackage": {
+    "versions": [
+      "0.4.10",
+      "0.3.11",
+      "0.2.13",
+      "0.1.0"
+    ],
+    "versionsNewScript": "Get-Content ./generate/definitions/versionsNew.json -Encoding utf8 -Force | ConvertFrom-Json"
+  }
+}
