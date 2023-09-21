@@ -5,6 +5,8 @@
 [![github-release](https://img.shields.io/github/v/release/theohbrothers/test-dockerimagevariants?style=flat-square)](https://github.com/theohbrothers/test-dockerimagevariants/releases/)
 [![docker-image-size](https://img.shields.io/docker/image-size/theohbrothers/test-dockerimagevariants/latest)](https://hub.docker.com/r/theohbrothers/test-dockerimagevariants)
 
+Repository to test [Generate-DockerImageVariantsHelpers](https://github.com/theohbrothers/Generate-DockerImageVariantsHelpers).
+
 ## Tags
 
 | Tag | Dockerfile Build Context |
@@ -60,6 +62,5 @@ $env:GITHUB_TOKEN = 'xxx'
 ```
 
 To perform a dry run, use `-WhatIf`.
-
 
 '@
