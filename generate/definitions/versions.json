@@ -6,6 +6,7 @@
       "0.2.14",
       "0.1.0"
     ],
+    "versionsChangeScope": "minor",
     "versionsNewScript": "Get-Content ./generate/definitions/versionsNew.json -Encoding utf8 -Force | ConvertFrom-Json"
   }
 }
