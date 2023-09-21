@@ -10,7 +10,7 @@
 |:-------:|:---------:|
 | `:v0.4.15-alpine-3.15`, `:latest` | [View](variants/v0.4.15-alpine-3.15) |
 | `:v0.3.15-alpine-3.15` | [View](variants/v0.3.15-alpine-3.15) |
-| `:v0.2.14-alpine-3.15` | [View](variants/v0.2.14-alpine-3.15) |
+| `:v0.2.15-alpine-3.15` | [View](variants/v0.2.15-alpine-3.15) |
 | `:v0.1.0-alpine-3.15` | [View](variants/v0.1.0-alpine-3.15) |
 
 ## Development
