@@ -12,7 +12,7 @@ Repository to test [Generate-DockerImageVariantsHelpers](https://github.com/theo
 |:-------:|:---------:|
 | `:v0.4.17-alpine-3.15`, `:latest` | [View](variants/v0.4.17-alpine-3.15) |
 | `:v0.3.17-alpine-3.15` | [View](variants/v0.3.17-alpine-3.15) |
-| `:v0.2.16-alpine-3.15` | [View](variants/v0.2.16-alpine-3.15) |
+| `:v0.2.17-alpine-3.15` | [View](variants/v0.2.17-alpine-3.15) |
 | `:v0.1.0-alpine-3.15` | [View](variants/v0.1.0-alpine-3.15) |
 
 ## Development
