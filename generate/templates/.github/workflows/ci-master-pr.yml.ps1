@@ -104,7 +104,7 @@ foreach ($v in $g.Group) {
         # Generate docker image tags
         # E.g. 'v0.0.0-<variant>' and 'v0.0.0-abc0123-<variant>'
         # E.g. 'master-<variant>' and 'master-abc0123-<variant>'
-        VARIANT=`$( $v['tag'] )
+        VARIANT="$( $v['tag'] )"
         REF_VARIANT="`${REF}-`${VARIANT}"
         REF_SHA_VARIANT="`${REF}-`${SHA}-`${VARIANT}"
 
