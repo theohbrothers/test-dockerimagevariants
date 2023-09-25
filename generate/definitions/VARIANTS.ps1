@@ -4,7 +4,7 @@ $local:VERSIONS = Get-Content $PSScriptRoot/versions.json -Encoding utf8 | Conve
 $local:VARIANTS_MATRIX = @(
     foreach ($v in $local:VERSIONS.coolpackage.versions) {
         @{
-            package_version = "v$v"
+            package_version = $v
             distro = 'alpine'
             distro_version = '3.15'
             subvariants = @(
@@ -26,7 +26,7 @@ $VARIANTS = @(
                     platforms =  'linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/s390x'
                     components = $subVariant['components']
                 }
-                # Docker image tag. E.g. 'v2.3.0.0-alpine-3.6'
+                # Docker image tag. E.g. '1.0.0-alpine-3.15'
                 tag = @(
                         $variant['package_version']
                         $subVariant['components'] | ? { $_ }

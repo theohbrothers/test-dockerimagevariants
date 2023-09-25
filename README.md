@@ -10,14 +10,14 @@ Repository to test [Generate-DockerImageVariantsHelpers](https://github.com/theo
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
-| `:v0.4.17-alpine-3.15`, `:latest` | [View](variants/v0.4.17-alpine-3.15) |
-| `:v0.4.17-curl-alpine-3.15` | [View](variants/v0.4.17-curl-alpine-3.15) |
-| `:v0.3.17-alpine-3.15` | [View](variants/v0.3.17-alpine-3.15) |
-| `:v0.3.17-curl-alpine-3.15` | [View](variants/v0.3.17-curl-alpine-3.15) |
-| `:v0.2.17-alpine-3.15` | [View](variants/v0.2.17-alpine-3.15) |
-| `:v0.2.17-curl-alpine-3.15` | [View](variants/v0.2.17-curl-alpine-3.15) |
-| `:v0.1.0-alpine-3.15` | [View](variants/v0.1.0-alpine-3.15) |
-| `:v0.1.0-curl-alpine-3.15` | [View](variants/v0.1.0-curl-alpine-3.15) |
+| `:0.4.17-alpine-3.15`, `:latest` | [View](variants/0.4.17-alpine-3.15) |
+| `:0.4.17-curl-alpine-3.15` | [View](variants/0.4.17-curl-alpine-3.15) |
+| `:0.3.17-alpine-3.15` | [View](variants/0.3.17-alpine-3.15) |
+| `:0.3.17-curl-alpine-3.15` | [View](variants/0.3.17-curl-alpine-3.15) |
+| `:0.2.17-alpine-3.15` | [View](variants/0.2.17-alpine-3.15) |
+| `:0.2.17-curl-alpine-3.15` | [View](variants/0.2.17-curl-alpine-3.15) |
+| `:0.1.0-alpine-3.15` | [View](variants/0.1.0-alpine-3.15) |
+| `:0.1.0-curl-alpine-3.15` | [View](variants/0.1.0-curl-alpine-3.15) |
 
 ## Development
 
