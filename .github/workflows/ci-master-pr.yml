@@ -101,7 +101,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-4-17-alpine-3-15 - Build (PRs)
+    - name: v0.4.17-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -115,7 +115,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-4-17-alpine-3-15 - Build and push (master)
+    - name: v0.4.17-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -129,7 +129,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-4-17-alpine-3-15 - Build and push (release)
+    - name: v0.4.17-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -169,7 +169,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-4-17-curl-alpine-3-15 - Build (PRs)
+    - name: v0.4.17-curl-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -183,7 +183,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-4-17-curl-alpine-3-15 - Build and push (master)
+    - name: v0.4.17-curl-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -197,7 +197,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-4-17-curl-alpine-3-15 - Build and push (release)
+    - name: v0.4.17-curl-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -236,7 +236,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-4-17-curl-git-alpine-3-15 - Build (PRs)
+    - name: v0.4.17-curl-git-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -250,7 +250,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-4-17-curl-git-alpine-3-15 - Build and push (master)
+    - name: v0.4.17-curl-git-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -264,7 +264,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-4-17-curl-git-alpine-3-15 - Build and push (release)
+    - name: v0.4.17-curl-git-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -354,7 +354,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-3-17-alpine-3-15 - Build (PRs)
+    - name: v0.3.17-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -368,7 +368,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-3-17-alpine-3-15 - Build and push (master)
+    - name: v0.3.17-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -382,7 +382,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-3-17-alpine-3-15 - Build and push (release)
+    - name: v0.3.17-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -421,7 +421,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-3-17-curl-alpine-3-15 - Build (PRs)
+    - name: v0.3.17-curl-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -435,7 +435,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-3-17-curl-alpine-3-15 - Build and push (master)
+    - name: v0.3.17-curl-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -449,7 +449,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-3-17-curl-alpine-3-15 - Build and push (release)
+    - name: v0.3.17-curl-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -488,7 +488,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-3-17-curl-git-alpine-3-15 - Build (PRs)
+    - name: v0.3.17-curl-git-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -502,7 +502,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-3-17-curl-git-alpine-3-15 - Build and push (master)
+    - name: v0.3.17-curl-git-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -516,7 +516,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-3-17-curl-git-alpine-3-15 - Build and push (release)
+    - name: v0.3.17-curl-git-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -606,7 +606,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-2-17-alpine-3-15 - Build (PRs)
+    - name: v0.2.17-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -620,7 +620,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-2-17-alpine-3-15 - Build and push (master)
+    - name: v0.2.17-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -634,7 +634,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-2-17-alpine-3-15 - Build and push (release)
+    - name: v0.2.17-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -673,7 +673,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-2-17-curl-alpine-3-15 - Build (PRs)
+    - name: v0.2.17-curl-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -687,7 +687,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-2-17-curl-alpine-3-15 - Build and push (master)
+    - name: v0.2.17-curl-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -701,7 +701,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-2-17-curl-alpine-3-15 - Build and push (release)
+    - name: v0.2.17-curl-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -740,7 +740,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-2-17-curl-git-alpine-3-15 - Build (PRs)
+    - name: v0.2.17-curl-git-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -754,7 +754,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-2-17-curl-git-alpine-3-15 - Build and push (master)
+    - name: v0.2.17-curl-git-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -768,7 +768,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-2-17-curl-git-alpine-3-15 - Build and push (release)
+    - name: v0.2.17-curl-git-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -858,7 +858,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-1-0-alpine-3-15 - Build (PRs)
+    - name: v0.1.0-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -872,7 +872,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-1-0-alpine-3-15 - Build and push (master)
+    - name: v0.1.0-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -886,7 +886,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-1-0-alpine-3-15 - Build and push (release)
+    - name: v0.1.0-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -925,7 +925,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-1-0-curl-alpine-3-15 - Build (PRs)
+    - name: v0.1.0-curl-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -939,7 +939,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-1-0-curl-alpine-3-15 - Build and push (master)
+    - name: v0.1.0-curl-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -953,7 +953,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-1-0-curl-alpine-3-15 - Build and push (release)
+    - name: v0.1.0-curl-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
@@ -992,7 +992,7 @@ jobs:
         echo "REF_VARIANT=$REF_VARIANT" >> $GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=$REF_SHA_VARIANT" >> $GITHUB_OUTPUT
 
-    - name: v0-1-0-curl-git-alpine-3-15 - Build (PRs)
+    - name: v0.1.0-curl-git-alpine-3.15 - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -1006,7 +1006,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-1-0-curl-git-alpine-3-15 - Build and push (master)
+    - name: v0.1.0-curl-git-alpine-3.15 - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -1020,7 +1020,7 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: v0-1-0-curl-git-alpine-3-15 - Build and push (release)
+    - name: v0.1.0-curl-git-alpine-3.15 - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:

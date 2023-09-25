@@ -115,7 +115,7 @@ foreach ($v in $g.Group) {
         echo "REF_VARIANT=`$REF_VARIANT" >> `$GITHUB_OUTPUT
         echo "REF_SHA_VARIANT=`$REF_SHA_VARIANT" >> `$GITHUB_OUTPUT
 
-    - name: $( $v['tag' ].Replace('.', '-') ) - Build (PRs)
+    - name: $( $v['tag' ] ) - Build (PRs)
       # Run only on pull requests
       if: github.event_name == 'pull_request'
       uses: docker/build-push-action@v3
@@ -129,7 +129,7 @@ foreach ($v in $g.Group) {
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: $( $v['tag' ].Replace('.', '-') ) - Build and push (master)
+    - name: $( $v['tag' ] ) - Build and push (master)
       # Run only on master
       if: github.ref == 'refs/heads/master'
       uses: docker/build-push-action@v3
@@ -143,7 +143,7 @@ foreach ($v in $g.Group) {
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
-    - name: $( $v['tag' ].Replace('.', '-') ) - Build and push (release)
+    - name: $( $v['tag' ] ) - Build and push (release)
       if: startsWith(github.ref, 'refs/tags/')
       uses: docker/build-push-action@v3
       with:
