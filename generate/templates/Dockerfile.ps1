@@ -15,4 +15,10 @@ RUN apk add --no-cache curl
 
 "@
     }
+    if ($c -eq 'git') {
+@"
+RUN apk add --no-cache git
+
+"@
+    }
 }

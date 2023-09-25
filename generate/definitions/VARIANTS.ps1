@@ -10,6 +10,7 @@ $local:VARIANTS_MATRIX = @(
             subvariants = @(
                 @{ components = @(); tag_as_latest = if ($v -eq ($local:VERSIONS.coolpackage.versions | ? { $_ -match '^\d+\.\d+\.\d+$' } | Select-Object -First 1 )) { $true } else { $false } }
                 @{ components = @( 'curl' ) }
+                @{ components = @( 'curl', 'git' ) }
             )
         }
     }

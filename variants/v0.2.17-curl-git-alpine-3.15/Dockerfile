@@ -1,0 +1,8 @@
+FROM alpine:3.15
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
+
+RUN echo Installing package v0.2.17
+RUN apk add --no-cache curl
+RUN apk add --no-cache git
