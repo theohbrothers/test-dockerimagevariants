@@ -123,8 +123,8 @@ foreach ($v in $g.Group) {
         platforms: $( $v['_metadata']['platforms'] -join ',' )
         push: false
         tags: |
-          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).REF_VARIANT }}
-          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).REF_SHA_VARIANT }}
+          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).outputs.REF_VARIANT }}
+          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).outputs.REF_SHA_VARIANT }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
@@ -137,8 +137,8 @@ foreach ($v in $g.Group) {
         platforms: $( $v['_metadata']['platforms'] -join ',' )
         push: true
         tags: |
-          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).REF_VARIANT }}
-          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).REF_SHA_VARIANT }}
+          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).outputs.REF_VARIANT }}
+          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).outputs.REF_SHA_VARIANT }}
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
@@ -150,9 +150,9 @@ foreach ($v in $g.Group) {
         platforms: $( $v['_metadata']['platforms'] -join ',' )
         push: true
         tags: |
-          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).VARIANT }}
-          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).REF_VARIANT }}
-          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).REF_SHA_VARIANT }}
+          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).outputs.VARIANT }}
+          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).outputs.REF_VARIANT }}
+          `${{ github.repository }}:`${{ steps.prep-$( $v['tag'].Replace('.', '-') ).outputs.REF_SHA_VARIANT }}
 
 "@
 
