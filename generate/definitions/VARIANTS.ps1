@@ -27,12 +27,10 @@ $VARIANTS = @(
                     components = $subVariant['components']
                     job_group_key = $variant['package_version']
                 }
-                # Docker image tag. E.g. '1.0.0-alpine-3.15'
+                # Docker image tag. E.g. '1.0.0'
                 tag = @(
                         $variant['package_version']
                         $subVariant['components'] | ? { $_ }
-                        $variant['distro']
-                        $variant['distro_version']
                 ) -join '-'
                 tag_as_latest = if ( $subVariant.Contains('tag_as_latest') ) {
                                     $subVariant['tag_as_latest']
