@@ -10,7 +10,9 @@ Repository to test [Generate-DockerImageVariantsHelpers](https://github.com/theo
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
-| `:0.4.17`, `:latest` | [View](variants/0.4.17) |
+| `:0.5.0`, `:latest` | [View](variants/0.5.0) |
+| `:0.5.0-curl` | [View](variants/0.5.0-curl) |
+| `:0.4.17` | [View](variants/0.4.17) |
 | `:0.4.17-curl` | [View](variants/0.4.17-curl) |
 | `:0.3.17` | [View](variants/0.3.17) |
 | `:0.3.17-curl` | [View](variants/0.3.17-curl) |
