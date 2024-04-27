@@ -19,7 +19,7 @@ jobs:
     steps:
     - run: |
         apk add --no-cache git
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Ignore git permissions
       run: |
         git config --global --add safe.directory "$( pwd )"
