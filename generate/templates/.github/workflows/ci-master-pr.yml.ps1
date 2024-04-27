@@ -223,7 +223,7 @@ if ( $v['tag_as_latest'] ) {
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Docker Hub Description
       uses: peter-evans/dockerhub-description@v4
       with:
